@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.clear {
+    clear: both;
+}
+.bigWrap {
+  width: 100% !important;
+  height: 100% !important;
+  /* background: gray; */
+}
+.headerWrap {
+    top: 0;
+    width: 100%;
+    height: 10%;
+    /* background: orangered; */
+    z-index: 100;
+    position: fixed;
+    /* box-shadow: 0px 1px 5px #888888; */
+}
+
+.marginTopContain {
+    width: 100%;
+    height: 70px;
+}
+
+.menuLink {
+    /* background: red; */
+    padding: 20px 10px !important;
+    color: rgb(109, 109, 109)!important;
+    /* display: table; */
+}.menuLink:hover {
+    /* background: yellow; */
+    padding: 10px 10px;
+    color: rgb(36, 36, 36)!important;
+    text-decoration: none;
+    /* display: table; */
+}
+
+.seratusx400 {
+    width: 100%;
+    min-height: 400px;
+    padding: 20px;
+}
+
+.fullPageLogin {
+    width: 100%;
+    height: 100vh;
+    background: #00B4DB;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0083B0, #00B4DB);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+button.btn-daftar.btn.btn-secondary {
+    background: #3883AA;
+    color: white;
+    border-color: #3883AA;
+    border-radius: 0px;
+}
+
+button.btn-daftar.btn.btn-secondary:hover {
+    background: #175777;
+    border-color: #175777;
+    color: white;
+}
+
+.progress-bar.bg-warning {background: #1a9c8f !important;}
+.progress-bar.bg-success {background: #25c1c3 !important;}
+.progress-bar.bg-danger {background: #e66d6d !important;}
+.bg-pendaftaran {background: #33bdc7; }
+.bg-white {background: white; }
+.bg-red {background: red; }
+.bg-yellow {background: yellow; }
+.bg-green {background: green; }
+.bg-cloud { background: #46A5D6; }
+.bg-blue {background: blue; }
+.bg-purple {background: purple; }
+.bg-gray {background: gray; }
+.bg-teal {background: teal; }
+
+.linkPutih {
+    text-decoration: none;
+    color: white;
+}.linkPutih:hover {
+    text-decoration: none;
+    color: rgb(226, 226, 226);
+}
+
+.notif {
+    color: gray;
+    font-size: 10px;
+    padding: 1px 5px;
+}
+.notif-red {
+    color: red;
+    font-size: 10px;
+    /* padding: 1px 5px; */
+}
+.formSalah {
+    border-color: red;
+    background: rgb(255, 243, 243);
+}
+.notif-green {
+    color: rgb(60, 213, 124);
+    font-size: 10px;
+    padding: 1px 5px;
+}
+.formBenar {
+    border-color: rgb(60, 213, 124);
+    background: rgb(246, 255, 243) !important;
+}
+
+.input-group-text {
+    color: #ffffff !important;
+    background-color: #0dc4b8 !important;
+}
+
+.progress {
+    height: 35px;
+    border-radius: 20px;
+}
+
+
+/* Slide breanda */
+.SlideAreaWrap {
+    width: 100%;
+    height: 530px;
+    background: #206657;
+    overflow: hidden;
+    position: relative;
+}
+.SlideAreaWrap > img {
+    width: 100%;
+    z-index: 1;
+    /* filter: saturate(50%) */
+}
+.marginTopSlide {
+    width: 100%;
+    height: 200px;
+}
+.slideCenter {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background: yellow;
+    margin-left: 0;
+    margin-right: 0;
+    left: 0;
+    right: 0;
+}
+.hueSaturation {
+    width: 100%;
+    height: 100%;
+    /* background: #002b18; */
+    background: #0d6063;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 10;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#09948d+0,00626b+100 */
+    /* background: rgb(9,148,141); 
+    background: -moz-linear-gradient(-45deg, rgba(9,148,141,1) 0%, rgba(0,98,107,1) 100%); 
+    background: -webkit-linear-gradient(-45deg, rgba(9,148,141,1) 0%,rgba(0,98,107,1) 100%);
+    background: linear-gradient(135deg, rgba(9,148,141,1) 0%,rgba(0,98,107,1) 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#09948d', endColorstr='#00626b',GradientType=1 ); */
+
+}
+.containerSLide {
+    color: white;
+}
+.containerSLide > h1 {
+    /* text-align: center; */
+    font-weight: bold;
+    font-size: 40px;
+    text-shadow: rgb(1, 40, 53) 1px 2px 4px;
+}
+.containerSLide > h3 {
+    width: 80%;
+    /* text-align: center; */
+    /* margin: 0 auto; */
+    font-size: 20px;
+    text-shadow: rgb(1, 40, 53) 1px 2px 4px;
+    line-height: 1.5em;
+}
+.btnSlide {
+    display: block;
+    /* margin: 30px auto; */
+    margin-top: 20px;
+}
+.contentWrap {
+    width: 100%;
+}
+.section {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.footerLogo {
+    width: 100%;
+    border-radius: 30px;
+}
+.footerLogo > img {
+    width: 200px;
+    background: white;
+    display: table;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+.modalLogin {
+    margin-top: 120px;
+    width: 50% !important;
+    background: red;
+}
+
+/*
+=========================================================================
+===== EXTRA-SMALL  D E V I C E ==========================================
+=========================================================================
+===== Extra small devices (phones, 600px and down) ======================
+=========================================================================
+*/
+@media only screen and (max-width: 600px) {
+    .menuLink {
+        background: rgb(228, 228, 228);
+        padding: 10px 10px;
+        display: block;
+        margin-bottom: 5px;
+    }
+    .marginTopSlide {
+        width: 100%;
+        height: 80px !important;
+    }
+    .SlideAreaWrap > img {
+        width: 250%;
+        height: 100%;
+        /* z-index: 1; */
+        /* filter: saturate(50%); */
+        margin-left: -100px;
+    }
+    .containerSLide > h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    .containerSLide > h3 {
+        font-size: 18px;
+        margin-left: 20px;
+    }
+    .btnSlide {
+        display: block;
+        /* margin: 30px auto; */
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+    .modalLogin {
+        margin-top: 120px;
+        width: 100% !important;
+        background: red;
+        margin-left: 0px;
+    }
+}
