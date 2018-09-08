@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 
 import { Container, Row, Col } from 'reactstrap';
 
+import NavbarAdmin from '../components/NavbarAdmin';
+
 class Dashboard extends Component {
     constructor(props) {
         super(props)
@@ -39,7 +41,7 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <div style={{ width: '100%', background: '#2191ed' }}>
+                {/* <div style={{ width: '100%', background: '#2191ed' }}>
                     <Container>
                         <Row>
                             <Col md="2">
@@ -54,7 +56,8 @@ class Dashboard extends Component {
                             </Col>
                         </Row>
                     </Container>
-                </div>
+                </div> */}
+                <NavbarAdmin profile={this.state.profile}/>
                 <div>
                     <Container>
                         <Row>

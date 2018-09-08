@@ -39,8 +39,8 @@ class Kontak extends Component {
                                         
                                         <div>
                                             <p style={{ color: 'gray' }}>
-                                                Jl Caringin Barat No 29A, Terogong Raya, Cilandak<br/>
-                                                Jakarta Selatan, 17411
+                                                Jl Caringin Barat 1 No 29A<br/>
+                                                Jakarta Selatan, 12430
                                             </p>
                                         </div>
                                     </Col>
@@ -50,7 +50,6 @@ class Kontak extends Component {
                                         <div>
                                             <p style={{ color: 'gray' }}>
                                                 info[at]datamedis.id<br/>
-                                                alang[at]datamedis.id
                                             </p>
                                         </div>
                                     </Col>
@@ -59,8 +58,7 @@ class Kontak extends Component {
                                         
                                         <div>
                                             <p style={{ color: 'gray' }}>
-                                                (+62) 21-xxxx-xxxx<br/>
-                                                (+62) 078-xxxx-xxxx
+                                                (+62) 21-766-9122<br/>
                                             </p>
                                         </div>
                                     </Col>
