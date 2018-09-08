@@ -41,22 +41,6 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                {/* <div style={{ width: '100%', background: '#2191ed' }}>
-                    <Container>
-                        <Row>
-                            <Col md="2">
-                                admin
-                            </Col>
-                            <Col md="6"></Col>
-                            <Col md="2">
-                                {this.state.profile.username}
-                            </Col>
-                            <Col md="2" onClick={this.logOut}>
-                            logout
-                            </Col>
-                        </Row>
-                    </Container>
-                </div> */}
                 <NavbarAdmin profile={this.state.profile}/>
                 <div>
                     <Container>
@@ -67,15 +51,15 @@ class Dashboard extends Component {
                             <Col md="2"></Col>
                             <Col md="4">
                                 <Link to="/kusnadi">
-                                    <div style={{ width: '100%', height: '100px', background: 'yellow' }}>
-                                        Hasil Lab
+                                    <div style={{ width: '100%', height: '100px', background: '#eaf5ff' }}>
+                                        <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>Hasil Lab</h3>
                                     </div>
                                 </Link>
                             </Col>
                             <Col md="4">
                                 <Link to="/arya">
-                                    <div style={{ width: '100%', height: '100px', background: 'orange' }}>
-                                        OCR
+                                    <div style={{ width: '100%', height: '100px', background: '#eaf5ff' }}>
+                                        <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>OCR</h3>
                                     </div>
                                 </Link>
                             </Col>
