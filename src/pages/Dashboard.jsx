@@ -52,14 +52,14 @@ class Dashboard extends Component {
                             <Col md="4">
                                 <Link to="/kusnadi">
                                     <div style={{ width: '100%', height: '100px', background: '#eaf5ff' }}>
-                                        <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>Hasil Lab</h3>
+                                        <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>Produk 1</h3>
                                     </div>
                                 </Link>
                             </Col>
                             <Col md="4">
                                 <Link to="/arya">
                                     <div style={{ width: '100%', height: '100px', background: '#eaf5ff' }}>
-                                        <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>OCR</h3>
+                                        <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>Produk 2</h3>
                                     </div>
                                 </Link>
                             </Col>
