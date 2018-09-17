@@ -6,9 +6,13 @@ import {
 } from 'reactstrap';
 import ChartHover from './ChartHover';
 
+import { Icon } from 'react-icons-kit';
+import { angleDoubleUp, angleDoubleDown } from 'react-icons-kit/fa';
+
 const data = [
     {
         name: 'Basofil',
+        jargon: 'Basofil adalah jenis sel darah putih atau leukosit dengan butiran kasar hitam kebiruan di dalam sitoplasma pada tampakan dengan mikroskop.',
         current: {
             nilaiRujukan: '0-1',
             batasAtas: '3',
@@ -25,6 +29,7 @@ const data = [
     },
     {
         name: 'Eosinofil',
+        jargon: 'Eosinofil adalah sel darah putih dari kategori granulosit yang berperan dalam sistem kekebalan dengan melawan parasit multiselular dan beberapa infeksi pada makhluk vertebrata',
         current: {
             nilaiRujukan: '1-6',
             batasAtas: '10',
@@ -41,6 +46,7 @@ const data = [
     },
     {
         name: 'Batang',
+        jargon: 'Batang adalah jenis neutrofil',
         current: {
             nilaiRujukan: '0-6',
             batasAtas: '10',
@@ -57,6 +63,7 @@ const data = [
     },
     {
         name: 'Segmen',
+        jargon: 'Segmen adalah jenis neutrofil',
         current: {
             nilaiRujukan: '34-71',
             batasAtas: '130',
@@ -73,6 +80,7 @@ const data = [
     },
     {
         name: 'Limfosit',
+        jargon: 'Limfosit adalah salah satu jenis sel darah putih. Seperti halnya sel darah putih lainnya, limfosit berfungsi sebagai bagian dari sistem daya tahan tubuh',
         current: {
             nilaiRujukan: '19-52',
             batasAtas: '130',
@@ -89,6 +97,7 @@ const data = [
     },
     {
         name: 'Monosit',
+        jargon: 'Monosit adalah kelompok darah putih yang menjadi bagian dari sistem kekebalan, jika terjadi infeksi monosit mengganti sel makrofaga dan DC yang rusak.',
         current: {
             nilaiRujukan: '5-13',
             batasAtas: '20',
@@ -105,6 +114,7 @@ const data = [
     },
     {
         name: 'Hematokrit',
+        jargon: 'Hematokrit adalah perbandingan jumlah sel darah merah dengan volume darah keseluruhan yang dihitung dalam persentase.',
         current: {
             nilaiRujukan: '34-45',
             batasAtas: '60',
@@ -121,6 +131,7 @@ const data = [
     },
     {
         name: 'Trombosit',
+        jargon: 'Trombosit adalah sel darah yang penting dalam pembekuan darah normal. Jumlah trombosit dapat digunakan sebagai deteksi dini atau mendiagnosis berbagai penyakit atau kondisi yang dapat menyebabkan masalah pada penggumpalan darah.',
         current: {
             nilaiRujukan: '182000-369000',
             batasAtas: '400000',
@@ -137,6 +148,7 @@ const data = [
     },
     {
         name: 'Eritrosit',
+        jargon: 'Eritrosit (sel darah merah) adalah jenis sel darah yang paling banyak dan berfungsi mengikat oksigen yang diperlukan untuk oksidasi jaringan-jaringan tubuh lewat darah.',
         current: {
             nilaiRujukan: '3.93-5.22',
             batasAtas: '8',
@@ -167,11 +179,21 @@ class HitungJenis extends Component {
             troHover: false,
             eriHover: false,
             show: false,
+            basHoverJ: false,
+            eosHoverJ: false,
+            batHoverJ: false,
+            segHoverJ: false,
+            limHoverJ: false,
+            monHoverJ: false,
+            hemHoverJ: false,
+            troHoverJ: false,
+            eriHoverJ: false,
         }
-        this.persentase = this.persentase.bind(this)
-        this.onHover = this.onHover.bind(this)
-        this.hoverLeave = this.hoverLeave.bind(this)
-        this.displayChart = this.displayChart.bind(this)
+        this.persentase = this.persentase.bind(this);
+        this.onHover = this.onHover.bind(this);
+        this.hoverLeave = this.hoverLeave.bind(this);
+        this.displayChart = this.displayChart.bind(this);
+        this.hoverName = this.hoverName.bind(this);
     }
 
     onHover (val) {
@@ -195,6 +217,37 @@ class HitungJenis extends Component {
         this.setState({
             show: !this.state.show
         })
+    }
+
+
+    hoverName (val) {
+        if (val === 'basHoverJ') {
+            this.setState({ basHoverJ: !this.state.basHoverJ })
+        }
+        if (val === 'eosHoverJ') {
+            this.setState({ eosHoverJ: !this.state.eosHoverJ })
+        }
+        if (val === 'batHoverJ') {
+            this.setState({ batHoverJ: !this.state.batHoverJ })
+        }
+        if (val === 'segHoverJ') {
+            this.setState({ segHoverJ: !this.state.segHoverJ })
+        }
+        if (val === 'limHoverJ') {
+            this.setState({ limHoverJ: !this.state.limHoverJ })
+        }
+        if (val === 'monHoverJ') {
+            this.setState({ monHoverJ: !this.state.monHoverJ })
+        }
+        if (val === 'hemHoverJ') {
+            this.setState({ hemHoverJ: !this.state.hemHoverJ })
+        }
+        if (val === 'troHoverJ') {
+            this.setState({ troHoverJ: !this.state.troHoverJ })
+        }
+        if (val === 'eriHoverJ') {
+            this.setState({ eriHoverJ: !this.state.eriHoverJ })
+        }
     }
 
     render() {
@@ -271,7 +324,28 @@ class HitungJenis extends Component {
             return(
                 <Col md="12" key={result.name}>
                     <Row style={styles.rows}>
-                        <Col md="4">{result.name}</Col>
+                        <Col md="4" style={{ marginBottom: '20px' }} onMouseOver={() => this.hoverName(result.current.hover + 'J')} onMouseLeave={() => this.hoverName(result.current.hover + 'J')}>
+                            {result.name}
+                            { (result.current.hover + 'J' === 'basHoverJ' && this.state.basHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'eosHoverJ' && this.state.eosHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'batHoverJ' && this.state.batHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'segHoverJ' && this.state.segHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'limHoverJ' && this.state.limHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'monHoverJ' && this.state.monHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'hemHoverJ' && this.state.hemHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'troHoverJ' && this.state.troHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'eriHoverJ' && this.state.eriHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            
+                        </Col>
                         <Col md="8" style={styles.posRel}>
                             <div style={styles.satuan}>{result.current.satuan}</div>
                             <div style={{ width: `${this.persentase(result.current.batasAtas, result.current.hasil)}%`, height: '1px', background: 'white', position: 'relative' }}>
@@ -384,9 +458,9 @@ class HitungJenis extends Component {
         }
         const showHide = () => {
             if (this.state.show) {
-                return 'Sembunyikan'
+                return <Icon icon={angleDoubleUp}  size='25' />
             } else {
-                return 'Tampilkan'
+                return <Icon icon={angleDoubleDown}  size='25' />
             }
         }
 
@@ -394,7 +468,7 @@ class HitungJenis extends Component {
             <div>
                 <Row md="12" >
                     <h4 style={styles.h4s}>
-                        Hitung Jenis
+                        <span onClick={this.displayChart}>Hitung Jenis</span>
                         <div style={{ position: 'absolute' ,color: 'gray', right: 0, top: 0, fontSize: '16px', zIndex: 15 }} onClick={this.displayChart}>{showHide()}</div>
                     </h4>
                     <Col md="12" style={display()}>
@@ -406,6 +480,16 @@ class HitungJenis extends Component {
     }
 }
 const styles = {
+    hoverJargon: {
+        background: '#f2fcfb',
+        borderRadius: 5,
+        position: 'absolute',
+        top: 30,
+        left: 15,
+        zIndex: 10,
+        padding: 10,
+        boxShadow: '0px 0px 5px gray',
+    },
     displayNone: {
         display: 'none'
     },
@@ -432,10 +516,11 @@ const styles = {
         position: 'relative',
     },
     rows: {
-        marginTop: '10px',
+        marginTop: '20px',
         padding: '10px 15px',
         position: 'relative',
-        marginBottom: '10px',
+        marginBottom: '20px',
+        // background: 'red',
     },
     satuan: {
         position: 'absolute',
@@ -448,7 +533,7 @@ const styles = {
     },
     valueBottom: {
         position: 'absolute',
-        top: '40px',
+        top: '36px',
         color: 'black',
         background: 'white',
         padding: '1px 3px',
@@ -461,19 +546,19 @@ const styles = {
         right: '-20px' ,
         // background: 'red',
         fontSize: '12px',
-        bottom: '-2px',
+        bottom: '2px',
     },
     flag: {
         background: 'green',
         margin: '0 auto',
-        padding: '0px 2px',
+        padding: '2px 3px',
         display: 'table',
         position: 'relative',
         border: '2px solid white',
         borderRadius: '3px',
         zIndex: 2,
         color: 'white',
-        fontSize: '9px'
+        fontSize: '10px'
     },
     flagTriangle: {
         width: '7px',
@@ -481,7 +566,7 @@ const styles = {
         background: 'green',
         display: 'table',
         position: 'absolute',
-        margin: '0',
+        // margin: '0',
         bottom: '-5px',
         left: 0,
         right: 0,
@@ -509,7 +594,7 @@ const styles = {
         background: 'red',
         display: 'table',
         position: 'absolute',
-        margin: '0',
+        // margin: '0',
         bottom: '-5px',
         left: 0,
         right: 0,
@@ -523,11 +608,11 @@ const styles = {
         // width: '400px',
         // height: '200px',
         background: 'white',
-        marginTop: '25px',
+        marginTop: '20px',
         position: 'absolute',
         padding: '20px 0px',
         boxShadow: '0px 0px 5px gray',
-        zIndex: 10
+        zIndex: 50,
     },
     hideChart: {
         width: '400px',

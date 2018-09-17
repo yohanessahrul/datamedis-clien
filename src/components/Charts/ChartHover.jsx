@@ -11,9 +11,6 @@ import {
 } from 'recharts';
 
 class ChartHover extends Component {
-    constructor(props) {
-        super(props)
-    }
     componentDidMount() {
         // console.log('props chart show =>', this.props.dattas.record)
     }
@@ -22,7 +19,7 @@ class ChartHover extends Component {
         return (
             <div>
                 <Col sm="12">
-                <AreaChart width={400} height={200} data={this.props.dattas.record} style={{ margin: '10px 30px 0px 0px' }}>
+                <AreaChart width={400} height={200} data={this.props.dattas.record} style={{ margin: '10px 30px 0px 0px', zIndex: 50, background: 'white' }}>
                     <CartesianGrid strokeDasharray="1 1"/>
                     <XAxis dataKey="name" fontSize="11" />
                     <YAxis fontSize="12"/>

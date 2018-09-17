@@ -6,9 +6,13 @@ import {
 } from 'reactstrap';
 import ChartHover from './ChartHover';
 
+import { Icon } from 'react-icons-kit';
+import { angleDoubleUp, angleDoubleDown } from 'react-icons-kit/fa';
+
 const data = [
     {
         name: 'MCV',
+        jargon: 'Mean Corpuscular Volume (MCV) merupakan salah satu pemeriksaan darah yang menunjukkan volume rata-rata satu sel darah merah dibandingkan dengan volume sel darah merah keseluruhan dalam darah.',
         current: {
             nilaiRujukan: '79-95',
             batasAtas: '150',
@@ -25,6 +29,7 @@ const data = [
     },
     {
         name: 'MCH',
+        jargon: 'Mean Corpuscular Hemoglobin (MCH) merupakan salah satu jenis pemeriksaan yang ada pada darah, di mana akan dinilai massa dari hemoglobin dari satuan sel darah merah yang ada di tubuh.',
         current: {
             nilaiRujukan: '26-32',
             batasAtas: '45',
@@ -41,6 +46,7 @@ const data = [
     },
     {
         name: 'MCHC',
+        jargon: 'MCHC atau Mean Corpuscular Hemoglobin Concentration adalah perhitungan rata-rata konsentrasi hemoglobin di dalam eritrosit.',
         current: {
             nilaiRujukan: '32-36',
             batasAtas: '45',
@@ -65,11 +71,15 @@ class McvMchMchc extends Component {
             mchHover: false,
             mchcHover: false,
             show: false,
+            mcvHoverJ: false,
+            mchHoverJ: false,
+            mchcHoverJ: false,
         }
-        this.persentase = this.persentase.bind(this)
-        this.onHover = this.onHover.bind(this)
-        this.hoverLeave = this.hoverLeave.bind(this)
-        this.displayChart = this.displayChart.bind(this)
+        this.persentase = this.persentase.bind(this);
+        this.onHover = this.onHover.bind(this);
+        this.hoverLeave = this.hoverLeave.bind(this);
+        this.displayChart = this.displayChart.bind(this);
+        this.hoverName = this.hoverName.bind(this);
     }
 
     onHover (val) {
@@ -93,6 +103,18 @@ class McvMchMchc extends Component {
         this.setState({
             show: !this.state.show
         })
+    }
+
+    hoverName (val) {
+        if (val === 'mcvHoverJ') {
+            this.setState({ mcvHoverJ: !this.state.mcvHoverJ })
+        }
+        if (val === 'mchHoverJ') {
+            this.setState({ mchHoverJ: !this.state.mchHoverJ })
+        }
+        if (val === 'mchcHoverJ') {
+            this.setState({ mchcHoverJ: !this.state.mchcHoverJ })
+        }
     }
 
     render() {
@@ -127,7 +149,16 @@ class McvMchMchc extends Component {
             return(
                 <Col md="12" key={result.name}>
                     <Row style={styles.rows}>
-                        <Col md="4">{result.name}</Col>
+                        <Col md="4" style={{ marginBottom: '20px' }}  onMouseOver={() => this.hoverName(result.current.hover + 'J')} onMouseLeave={() => this.hoverName(result.current.hover + 'J')} >
+                            {result.name}
+                            { (result.current.hover + 'J' === 'mcvHoverJ' && this.state.mcvHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'mchHoverJ' && this.state.mchHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            { (result.current.hover + 'J' === 'mchcHoverJ' && this.state.mchcHoverJ) ? 
+                              <div style={styles.hoverJargon}>{result.jargon}</div> : '' }
+                            
+                        </Col>
                         <Col md="8" style={styles.posRel}>
                             <div style={styles.satuan}>{result.current.satuan}</div>
                             <div style={{ width: `${this.persentase(result.current.batasAtas, result.current.hasil)}%`, height: '1px', background: 'white', position: 'relative' }}>
@@ -192,9 +223,9 @@ class McvMchMchc extends Component {
         }
         const showHide = () => {
             if (this.state.show) {
-                return 'Sembunyikan'
+                return <Icon icon={angleDoubleUp}  size='25' />
             } else {
-                return 'Tampilkan'
+                return <Icon icon={angleDoubleDown}  size='25' />
             }
         }
 
@@ -202,7 +233,7 @@ class McvMchMchc extends Component {
             <div>
                 <Row md="12" >
                     <h4 style={styles.h4s}>
-                        MCV, MCH, MCHC
+                        <span onClick={this.displayChart}>MCV, MCH, MCHC</span>
                         <div style={{ position: 'absolute' ,color: 'gray', right: 0, top: 0, fontSize: '16px', zIndex: 15 }} onClick={this.displayChart}>{showHide()}</div>
                     </h4>
                     <Col md="12" style={display()}>
@@ -214,6 +245,16 @@ class McvMchMchc extends Component {
     }
 }
 const styles = {
+    hoverJargon: {
+        background: '#f2fcfb',
+        borderRadius: 5,
+        position: 'absolute',
+        top: 30,
+        left: 15,
+        zIndex: 10,
+        padding: 10,
+        boxShadow: '0px 0px 5px gray',
+    },
     displayNone: {
         display: 'none'
     },
@@ -240,10 +281,11 @@ const styles = {
         position: 'relative',
     },
     rows: {
-        marginTop: '10px',
+        marginTop: '20px',
         padding: '10px 15px',
         position: 'relative',
-        marginBottom: '10px',
+        marginBottom: '20px',
+        // background: 'red',
     },
     satuan: {
         position: 'absolute',
@@ -256,7 +298,7 @@ const styles = {
     },
     valueBottom: {
         position: 'absolute',
-        top: '40px',
+        top: '36px',
         color: 'black',
         background: 'white',
         padding: '1px 3px',
@@ -269,19 +311,19 @@ const styles = {
         right: '-20px' ,
         // background: 'red',
         fontSize: '12px',
-        bottom: '-2px',
+        bottom: '2px',
     },
     flag: {
         background: 'green',
         margin: '0 auto',
-        padding: '0px 2px',
+        padding: '2px 3px',
         display: 'table',
         position: 'relative',
         border: '2px solid white',
         borderRadius: '3px',
         zIndex: 2,
         color: 'white',
-        fontSize: '9px'
+        fontSize: '10px'
     },
     flagTriangle: {
         width: '7px',
@@ -289,7 +331,7 @@ const styles = {
         background: 'green',
         display: 'table',
         position: 'absolute',
-        margin: '0',
+        // margin: '0',
         bottom: '-5px',
         left: 0,
         right: 0,
@@ -309,7 +351,7 @@ const styles = {
         borderRadius: '3px',
         zIndex: 2,
         color: 'white',
-        fontSize: '9px'
+        fontSize: '10px'
     },
     flagTriangleRed: {
         width: '7px',
@@ -317,7 +359,7 @@ const styles = {
         background: 'red',
         display: 'table',
         position: 'absolute',
-        margin: '0',
+        // margin: '0',
         bottom: '-5px',
         left: 0,
         right: 0,
@@ -335,13 +377,13 @@ const styles = {
         position: 'absolute',
         padding: '20px 0px',
         boxShadow: '0px 0px 5px gray',
-        zIndex: 10
+        zIndex: 50,
     },
     hideChart: {
         width: '400px',
         height: '200px',
         background: 'white',
-        marginTop: '25px',
+        marginTop: '20px',
         position: 'absolute',
         display: 'none'
     }
