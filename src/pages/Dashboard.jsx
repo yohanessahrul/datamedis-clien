@@ -39,36 +39,36 @@ class Dashboard extends Component {
     }
 
     render() {
-        return (
-            <div>
-                <NavbarAdmin profile={this.state.profile}/>
-                <div>
-                    <Container>
-                        <Row>
-                            <div style={{ width: '100%', height: '100px' }}></div>
-                        </Row>
-                        <Row>
-                            <Col md="2"></Col>
-                            <Col md="4">
-                                <Link to="/kusnadi">
-                                    <div style={{ width: '100%', height: '100px', background: '#eaf5ff' }}>
-                                        <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>Produk 1</h3>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col md="4">
-                                <Link to="/arya">
-                                    <div style={{ width: '100%', height: '100px', background: '#eaf5ff' }}>
-                                        <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>Produk 2</h3>
-                                    </div>
-                                </Link>
-                            </Col>
-                            <Col md="2"></Col>
-                        </Row>
-                    </Container>
-                </div>
-            </div>
-        );
+      return (
+        <div>
+          <NavbarAdmin profile={this.state.profile}/>
+          <div>
+            <Container>
+              <Row>
+                <div style={{ width: '100%', height: '100px' }}></div>
+              </Row>
+              <Row>
+                <Col md="2"></Col>
+                <Col md="4">
+                  <Link to="/product1">
+                    <div style={{ width: '100%', height: '100px', background: '#eaf5ff' }}>
+                      <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>Produk 1</h3>
+                    </div>
+                  </Link>
+                </Col>
+                <Col md="4">
+                  <Link to="/product2">
+                    <div style={{ width: '100%', height: '100px', background: '#eaf5ff' }}>
+                      <h3 style={{ display: 'table', padding: '30px', margin: '10px auto', color: '#1a7067' }}>Produk 2</h3>
+                    </div>
+                  </Link>
+                </Col>
+                <Col md="2"></Col>
+              </Row>
+            </Container>
+          </div>
+        </div>
+      );
     }
 }
 const mapStateToProps = (state) => {

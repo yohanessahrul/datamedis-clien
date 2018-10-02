@@ -38,8 +38,8 @@ class App extends Component {
             <Route path="/dummy" component={Dummy} />
             <Route path="/hasildummy" component={HasilDummy} />
             <Route path="/chart" component={ChartMedis} />
-            <Route path="/kusnadi" component={() => window.location = 'http://lab.forbits.id'} />
-            <Route path="/arya" component={() => window.location = 'http://medical-record.datamedis.id/form'} />
+            <Route path="/product1" component={() => window.location = `http://209.97.170.154?token=${localStorage.getItem('token')}`} />
+            <Route path="/product2" component={() => window.location = `http://66.42.62.145?token=${localStorage.getItem('token')}`} />
             <Route path="" />
           </Switch>
         </div>

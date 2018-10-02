@@ -4,7 +4,6 @@ import {
     Row,
     Col,
     CardBody,
-    CardTitle,
 } from 'reactstrap';
 
 import Hematologi from '../components/Charts/Hematologi';
