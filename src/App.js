@@ -3,7 +3,6 @@ import './App.css';
 import history from './history';
 import { Router, Switch, Route } from 'react-router-dom';
 
-// import Navigation from './components/ScrollingNavigation1';
 import Beranda from './pages/Beranda';
 import Layanan from './pages/Layanan';
 import Kontak from './pages/Kontak';
@@ -38,8 +37,8 @@ class App extends Component {
             <Route path="/dummy" component={Dummy} />
             <Route path="/hasildummy" component={HasilDummy} />
             <Route path="/chart" component={ChartMedis} />
-            <Route path="/product1" component={() => window.location = `http://209.97.170.154?token=${localStorage.getItem('token')}`} />
-            <Route path="/product2" component={() => window.location = `http://66.42.62.145?token=${localStorage.getItem('token')}`} />
+            <Route path="/product1" component={() => window.location = `http://product1.datamedis.id?token=${localStorage.getItem('token')}`} />
+            <Route path="/product2" component={() => window.location = `http://product2.datamedis.id?token=${localStorage.getItem('token')}`} />
             <Route path="" />
           </Switch>
         </div>
