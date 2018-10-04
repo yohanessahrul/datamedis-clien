@@ -75,16 +75,6 @@ class Dashboard extends Component {
                   <Icon icon={check} /> &nbsp;
                 </div>
                 Riwayat kesehatan</li>
-              <li style={styles.detailLi}>
-                <div style={{ color: '#29d09a', float: 'left' }}>
-                  <Icon icon={check} /> &nbsp;
-                </div>
-                Fitur 3</li>
-              <li style={styles.detailLi}>
-                <div style={{ color: '#29d09a', float: 'left' }}>
-                  <Icon icon={check} /> &nbsp;
-                </div>
-                Fitur 4</li>
               <Link to="/product1" style={{ color: 'white', textDecoration: 'none' }}>
                 <Button color="info" style={styles.floatBtn}>
                   Masuk
@@ -113,16 +103,6 @@ class Dashboard extends Component {
                   <Icon icon={check} /> &nbsp;
                 </div>
                 Cek diabetes</li>
-              <li style={styles.detailLi}>
-                <div style={{ color: '#29d09a', float: 'left' }}>
-                  <Icon icon={check} /> &nbsp;
-                </div>
-                e-Learning</li>
-              <li style={styles.detailLi}>
-                <div style={{ color: '#29d09a', float: 'left' }}>
-                  <Icon icon={check} /> &nbsp;
-                </div>
-                Fitur 4</li>
               <Link to="/product2" style={{ color: 'white', textDecoration: 'none' }}>
                 <Button color="info" style={styles.floatBtn}>
                   Masuk
