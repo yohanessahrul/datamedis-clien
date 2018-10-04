@@ -47,17 +47,20 @@ class NavbarAdmin extends Component {
     render() {
         return (
             <div>
-            <Navbar color="light" light expand="md">
-              <NavbarBrand href="/">Admin</NavbarBrand>
+            <Navbar color="light" light expand="md" className="adminNavbar">
+              <NavbarBrand className="brandStyle" href="/">Admin</NavbarBrand>
               <NavbarToggler onClick={this.toggle} />
               <Collapse isOpen={this.state.isOpen} navbar>
                 <Nav className="ml-auto" navbar>
                   <UncontrolledDropdown nav inNavbar>
-                    <DropdownToggle nav caret>
-                        {this.state.profile.username} &nbsp;
+                    <DropdownToggle nav caret className="usernameNavbarStyle">
+                      <div className="avaStyle">
+                        <img src={'/images/userava.jpg'} alt="avaImg"/>
+                      </div>
+                      {this.state.profile.username}
                     </DropdownToggle>
                     <DropdownMenu right>
-                      <DropdownItem divider />
+                      {/* <DropdownItem divider /> */}
                       <DropdownItem onClick={this.logOut}>
                         Logout
                       </DropdownItem>
