@@ -7,6 +7,7 @@ import {envelopeO, mapPin, phoneSquare} from 'react-icons-kit/fa'
 
 import Navigation from '../components/Navigation';
 import FormBukuTamu from '../components/FormBukuTamu';
+import Footer from '../components/Footer';
 
 class Kontak extends Component {
     constructor(props) {
@@ -39,8 +40,8 @@ class Kontak extends Component {
                                         
                                         <div>
                                             <p style={{ color: 'gray' }}>
-                                                Jl Caringin Barat 1 No 29A<br/>
-                                                Jakarta Selatan, 12430
+                                              Jl Caringin Barat 1 No 29A<br/>
+                                              Jakarta Selatan, 12430
                                             </p>
                                         </div>
                                     </Col>
@@ -49,7 +50,7 @@ class Kontak extends Component {
                                         
                                         <div>
                                             <p style={{ color: 'gray' }}>
-                                                info[at]datamedis.id<br/>
+                                              info[at]datamedis.id<br/>
                                             </p>
                                         </div>
                                     </Col>
@@ -58,7 +59,7 @@ class Kontak extends Component {
                                         
                                         <div>
                                             <p style={{ color: 'gray' }}>
-                                                (+62) 21-766-9122<br/>
+                                              (+62) 821-1470-7430<br/>
                                             </p>
                                         </div>
                                     </Col>
@@ -67,6 +68,7 @@ class Kontak extends Component {
                         </Row>
                     </Container>
                 </div>
+                <Footer/>
             </div>
         );
     }

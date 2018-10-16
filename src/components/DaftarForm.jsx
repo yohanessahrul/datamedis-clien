@@ -52,6 +52,7 @@ class DaftarForm extends Component {
     }
 
     emailChecker () {
+        // eslint-disable-next-line
         let regChecker = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return regChecker.test(String(this.state.email).toLocaleLowerCase())
     }

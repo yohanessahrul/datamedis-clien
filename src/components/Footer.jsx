@@ -2,51 +2,94 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 
+import { Icon } from 'react-icons-kit';
+import { facebook, twitter, youtubePlay, instagram} from 'react-icons-kit/fa';
+
+
 class Footer extends Component {
     render() {
         return (
-            <div style={{ background: '#3d6666' }}>
-                <Container>
-                    <Row>
-                        <div style={{ width: '100%', height: '50px'  }}></div>
-                    </Row>
-                    <Row style={{ marginBottom: '50px' }}>
-                        <Col md="4">
-                            <div className="footerLogo">
-                                <img src={require('../assets/logo-datamedis-header.png')} alt="logo-footer" />
-                            </div>
-                            <div style={{ marginTop: '20px' }}>
-                                <ul style={{ margin: 0, padding: 0 }}>
-                                    <li style={{ listStyle: 'none', color: 'white' }}>Phone : 0821-1470-7430</li>
-                                    <li style={{ listStyle: 'none', color: 'white' }}>EMail : info[at]datamedis.id</li>
-                                </ul>
-                            </div>
-                        </Col>
-                        <Col md="4">
-                            <div style={{ background: 'yellow' }}></div>
-                        </Col>
-                        <Col md="4">
-                            <div style={{ marginTop: '20px' }}>
-                                <ul style={{ margin: 0, padding: 0 }}>
-                                    <li style={{ listStyle: 'none', color: 'white' }}>
-                                        <Link style={{ color: 'white' }} to="/kebijakan">Kebijakan Privasi</Link>
-                                    </li>
-                                    <li style={{ listStyle: 'none', color: 'white' }}>
-                                        <Link style={{ color: 'white' }} to="/syarat">Syarat dan ketentuan layanan</Link>
-                                    </li>
-                                    <li style={{ listStyle: 'none', color: 'white' }}>
-                                        <Link style={{ color: 'white' }} to="/tim">Tim Kami</Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="12" style={{  borderTop: 'thin solid #487070' }}>
-                            <p style={{ textAlign: 'center', color: 'white', padding: '20px' }}>&copy; PT. Ilmu Data Terpadu</p>
-                        </Col>
-                    </Row>
-                </Container>
+            <div style={{ width: '100%', background: '#3d6666', padding: '50px 0px 10px 0px' }}>
+              <Container>
+                <Row>
+                  <Col md="4">
+                    <div className="footer">
+                      <img style={{ padding: '5px 15px', background: 'white', borderRadius: '5px', width: '200px' }}  src={require('../assets/logo-datamedis-header.png')} alt="logo-footer" />
+                      <ul style={{ margin: 0, paddingTop: '10px' }}>
+                        <li style={{ listStyle: 'none', color: 'white', fontSize: '13px', paddingTop: '5px' }}>
+                          <Link style={{ color: 'white' }} to="/kebijakan">Kebijakan Privasi</Link>
+                        </li>
+                        <li style={{ listStyle: 'none', color: 'white', fontSize: '13px', paddingTop: '5px' }}>
+                          <Link style={{ color: 'white' }} to="/syarat">Syarat dan ketentuan layanan</Link>
+                        </li>
+                        <li style={{ listStyle: 'none', color: 'white', fontSize: '13px', paddingTop: '5px' }}>
+                          <Link style={{ color: 'white' }} to="/tim">Tim Kami</Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col md="4">
+                    <div className="footer">
+                      <h5 style={{ color: 'white' }}>Alamat</h5>
+                      <ul>
+                        <li style={{ listStyle: 'none', display: 'table' }}>
+                          <div className="footerAddress">
+                            <p>
+                              Jl Caringin Barat 1 No.29A <br/>
+                              RT 015/010, Terogong, Cilandak Barat<br/>
+                              Jakarta Selatan, 146376<br/>
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </Col>
+                  <Col md="4">
+                    <div className="footer">
+                      <h5 style={{ color: 'white' }}>Sosial Media</h5>
+                      <ul>
+                        <li style={{ listStyle: 'none', display: 'table' }}>
+                          <Icon className="footerAddressIcon" style={{ float: 'left', padding: '0px 10px 10px 0px', color: '#4adebc' }}  size={16} icon={facebook}/>
+                          <div className="footerAddress">
+                            <p>
+                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="#" target="_blank">Facebook Kemodijakarta</a>
+                            </p>
+                          </div>
+                        </li>
+                        <li style={{ listStyle: 'none', display: 'table' }}>
+                          <Icon className="footerAddressIcon" style={{ float: 'left', padding: '0px 10px 10px 0px', color: '#4adebc' }}  size={16} icon={instagram}/>
+                          <div className="footerAddress">
+                            <p>
+                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="https://www.instagram.com/kemodijakarta/" target="_blank">Instagram Kemodijakarta</a>
+                            </p>
+                          </div>
+                        </li>
+                        <li style={{ listStyle: 'none', display: 'table' }}>
+                          <Icon className="footerAddressIcon" style={{ float: 'left', padding: '0px 10px 10px 0px', color: '#4adebc' }}  size={16} icon={twitter}/>
+                          <div className="footerAddress">
+                            <p>
+                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="#" target="_blank">Twitter Kemodijakarta</a>
+                            </p>
+                          </div>
+                        </li>
+                        <li style={{ listStyle: 'none', display: 'table' }}>
+                          <Icon className="footerAddressIcon" style={{ float: 'left', padding: '0px 10px 10px 0px', color: '#4adebc' }}  size={16} icon={youtubePlay}/>
+                          <div className="footerAddress">
+                            <p>
+                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="https://www.youtube.com/channel/UClrJIDtcsoQQpJeFprp5NTA" target="_blank">Youtube Kemodijakarta</a>
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col md="12">
+                    <p style={{ color: 'white', fontSize: '11px', textAlign: 'center', borderTop: 'thin solid #275b73', paddingTop: '20px' }}>Copyright : PT Ilmu Data Terpadu</p>
+                  </Col>
+                </Row>
+              </Container>
             </div>
         );
     }

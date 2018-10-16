@@ -97,12 +97,14 @@ class Dashboard extends Component {
                 <div style={{ color: '#29d09a', float: 'left' }}>
                   <Icon icon={check} /> &nbsp;
                 </div>
-                Cek hipertensi</li>
-              <li style={styles.detailLi}>
+                Cek hipertensi
+              </li>
+              {/* <li style={styles.detailLi}>
                 <div style={{ color: '#29d09a', float: 'left' }}>
                   <Icon icon={check} /> &nbsp;
                 </div>
-                Cek diabetes</li>
+                Cek diabetes
+              </li> */}
               <Link to="/product2" style={{ color: 'white', textDecoration: 'none' }}>
                 <Button color="info" style={styles.floatBtn}>
                   Masuk
@@ -127,16 +129,16 @@ class Dashboard extends Component {
               <Col md="2"></Col>
               <Col md="4">
                 <Link to="/product1">
-                  <div style={{ background: '#71abda', padding: '30px', display: 'block' }} id="1" onMouseOver={this.hoverShow}>
-                    <h3 style={{ textAlign: 'center', color: 'white', background:'#71abda', textDecoration: 'none' }} id="1" onMouseOver={this.hoverShow}>Produk 1</h3>
+                  <div style={{ background: '#71abda', padding: '30px', display: 'block', height: '120px' }} id="1" onMouseOver={this.hoverShow}>
+                    <h3 style={{ textAlign: 'center', color: 'white', background:'#71abda', textDecoration: 'none' }} id="1" onMouseOver={this.hoverShow}>Hasil Lab</h3>
                   </div>
                 </Link>
                 {styleShowDetail1()}
               </Col>
               <Col md="4">
                 <Link to="/product2">
-                  <div style={{ background: '#71abda', padding: '30px', display: 'block' }} id="2" onMouseOver={this.hoverShow}>
-                    <h3 style={{ textAlign: 'center', color: 'white', background:'#71abda', textDecoration: 'none' }} id="2" onMouseOver={this.hoverShow}>Produk 2</h3>
+                  <div style={{ background: '#71abda', padding: '30px', display: 'block', height: '120px' }} id="2" onMouseOver={this.hoverShow}>
+                    <h3 style={{ textAlign: 'center', color: 'white', background:'#71abda', textDecoration: 'none' }} id="2" onMouseOver={this.hoverShow}>Manajemen Penyakit Kronis</h3>
                   </div>
                 </Link>
                 {styleShowDetail2()}

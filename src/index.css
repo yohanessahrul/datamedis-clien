@@ -32,3 +32,25 @@ body {
   width: 110%;
   margin-top: -2px;
 }
+
+
+.footer > ul {
+  margin: 0;
+  padding: 10px 0px;
+}
+.footerAddress  {
+  float: left;
+}
+.footerAddressIcon {
+  color: white;
+}
+.footerAddress > p {
+  font-size: 13px !important;
+  line-height: 18px;
+  color: rgb(238, 246, 244);
+  display: table;
+  padding-bottom: -10px;
+}
+hr {
+  color: red;
+}
