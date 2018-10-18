@@ -38,7 +38,7 @@ class App extends Component {
             <Route path="/hasildummy" component={HasilDummy} />
             <Route path="/chart" component={ChartMedis} />
             <Route path="/product1" component={() => window.location = `http://product1.datamedis.id?token=${localStorage.getItem('token')}`} />
-            <Route path="/product2" component={() => window.location = `http://product2.datamedis.id?token=${localStorage.getItem('token')}`} />
+            <Route path="/product2" component={() => window.location = `http://hipertensi.datamedis.id?token=${localStorage.getItem('token')}`} />
             <Route path="" />
           </Switch>
         </div>
