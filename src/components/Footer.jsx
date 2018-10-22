@@ -52,7 +52,7 @@ class Footer extends Component {
                           <Icon className="footerAddressIcon" style={{ float: 'left', padding: '0px 10px 10px 0px', color: '#4adebc' }}  size={16} icon={facebook}/>
                           <div className="footerAddress">
                             <p>
-                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="#" target="_blank">Facebook Kemodijakarta</a>
+                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="#" target="_blank">Facebook Datamedis</a>
                             </p>
                           </div>
                         </li>
@@ -60,7 +60,7 @@ class Footer extends Component {
                           <Icon className="footerAddressIcon" style={{ float: 'left', padding: '0px 10px 10px 0px', color: '#4adebc' }}  size={16} icon={instagram}/>
                           <div className="footerAddress">
                             <p>
-                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="https://www.instagram.com/kemodijakarta/" target="_blank">Instagram Kemodijakarta</a>
+                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="#" target="_blank">Instagram Datamedis</a>
                             </p>
                           </div>
                         </li>
@@ -68,7 +68,7 @@ class Footer extends Component {
                           <Icon className="footerAddressIcon" style={{ float: 'left', padding: '0px 10px 10px 0px', color: '#4adebc' }}  size={16} icon={twitter}/>
                           <div className="footerAddress">
                             <p>
-                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="#" target="_blank">Twitter Kemodijakarta</a>
+                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="#" target="_blank">Twitter Datamedis</a>
                             </p>
                           </div>
                         </li>
@@ -76,7 +76,7 @@ class Footer extends Component {
                           <Icon className="footerAddressIcon" style={{ float: 'left', padding: '0px 10px 10px 0px', color: '#4adebc' }}  size={16} icon={youtubePlay}/>
                           <div className="footerAddress">
                             <p>
-                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="https://www.youtube.com/channel/UClrJIDtcsoQQpJeFprp5NTA" target="_blank">Youtube Kemodijakarta</a>
+                              <a style={{ color: 'white', textDecoration: 'none' }} rel="noopener noreferrer" href="#" target="_blank">Youtube Datamedis</a>
                             </p>
                           </div>
                         </li>
