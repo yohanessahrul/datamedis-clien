@@ -4,7 +4,7 @@ import alertify from 'alertifyjs';
 
 export function loginAction(payload) {
     return dispatch => {
-        axios.post('http://66.42.62.145/auth/login/', payload)
+        axios.post('http://myhipertensi.datamedis.id/auth/login/', payload)
           .then(response => {
               console.log('RESPON====> ', response.data.user)
               dispatch(setUserProfile(response.data.user))
