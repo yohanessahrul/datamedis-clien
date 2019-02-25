@@ -6,11 +6,9 @@ export function loginAction(payload) {
     return dispatch => {
         axios.post('http://passport.datamedis.id/auth/login/', payload)
           .then(response => {
-              console.log('RESPON====> ', response.data)
               dispatch(setUserProfile(response.data.user))
               dispatch(setToken(response.data.token))
               localStorage.setItem('token', response.data.token)
-            //   localStorage.setItem('profile', JSON.stringify(response.data.user))
               history.push('/dashboard')
               alertify.success(`Selamat datang ${JSON.stringify(response.data.user.username)}`)
           })
