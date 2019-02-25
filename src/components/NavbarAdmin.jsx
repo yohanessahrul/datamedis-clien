@@ -37,12 +37,6 @@ class NavbarAdmin extends Component {
         this.props.logoutAction()
     }
     componentDidMount() {
-        let profileJson = JSON.parse(localStorage.getItem('profile'))
-        this.setState({
-            profile: profileJson
-        })
-
-        console.log('NAVBAR PROPS ===> ', this.state.profile)
     }
     render() {
         return (
@@ -57,7 +51,7 @@ class NavbarAdmin extends Component {
                       <div className="avaStyle">
                         <img src={'/images/userava.jpg'} alt="avaImg"/>
                       </div>
-                      {this.state.profile.username}
+                      
                     </DropdownToggle>
                     <DropdownMenu right>
                       {/* <DropdownItem divider /> */}
