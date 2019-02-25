@@ -4,11 +4,12 @@ import alertify from 'alertifyjs';
 
 export function loginAction(payload) {
     return dispatch => {
-        axios.post('http://myhipertensi.datamedis.id/auth/login/', payload)
+        axios.post('http://passport.datamedis.id/auth/login/', payload)
           .then(response => {
-              console.log('RESPON====> ', response.data.user)
+              console.log('RESPON====> ', response)
               dispatch(setUserProfile(response.data.user))
               dispatch(setToken(response.data.token))
+              localStorage.setItem('response', response.data)
               localStorage.setItem('token', response.data.token)
               localStorage.setItem('profile', JSON.stringify(response.data.user))
               history.push('/dashboard')
