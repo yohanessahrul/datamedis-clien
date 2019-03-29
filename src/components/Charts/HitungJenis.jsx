@@ -350,14 +350,14 @@ class HitungJenis extends Component {
                             <div style={styles.satuan}>{result.current.satuan}</div>
                             <div style={{ width: `${this.persentase(result.current.batasAtas, result.current.hasil)}%`, height: '1px', background: 'white', position: 'relative' }}>
                                 <div style={styles.wadahFlag}>
-                                    <div style={styles.flag}>
+                                    <div style={styles.flag} onMouseOver={() => this.onHover(result.current.hover)} onMouseLeave={() => this.hoverLeave(result.current.hover)}>
                                         {result.current.hasil}
                                         <div style={styles.flagTriangle}></div>
                                     </div>
                                 </div>
                             </div>
                             <div className="clear"></div>
-                            <Progress multi onMouseOver={() => this.onHover(result.current.hover)} onMouseLeave={() => this.hoverLeave(result.current.hover)}>
+                            <Progress multi>
                                 <Progress bar color="warning" value={this.persentase(result.current.batasAtas, valueRendah)} style={styles.posRel} >
                                     Rendah
                                     <div style={styles.valueBottom}>0</div>
@@ -558,7 +558,8 @@ const styles = {
         borderRadius: '3px',
         zIndex: 2,
         color: 'white',
-        fontSize: '10px'
+        fontSize: '10px',
+        cursor: 'pointer',
     },
     flagTriangle: {
         width: '7px',
