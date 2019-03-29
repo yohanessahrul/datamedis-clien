@@ -367,11 +367,19 @@ class HitungJenis extends Component {
                                 </Progress>
                                 <Progress bar color="success" value={this.persentase(result.current.batasAtas, valueNormal)} style={styles.posRel} >
                                     Normal
-                                    <div style={styles.valueBottom}>{splitNilaiRujukan[0]}</div>
+                                    {
+                                        (result.name === 'Trombosit') ?
+                                        <div style={styles.valueBottom}>{formatCurrency(splitNilaiRujukan[0])}</div> :
+                                        <div style={styles.valueBottom}>{splitNilaiRujukan[0]}</div>
+                                    }
                                 </Progress>
                                 <Progress bar color="danger" value={this.persentase(result.current.batasAtas, valueTinggi)} style={styles.posRel} >
                                     Tinggi
-                                    <div style={styles.valueBottom}>{splitNilaiRujukan[1]}</div>
+                                    {
+                                        (result.name === 'Trombosit') ?
+                                        <div style={styles.valueBottom}>{formatCurrency(splitNilaiRujukan[1])}</div> :
+                                        <div style={styles.valueBottom}>{splitNilaiRujukan[1]}</div>
+                                    }
                                 </Progress>
                             </Progress>
                             {
