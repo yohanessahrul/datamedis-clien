@@ -5,6 +5,7 @@ import {
     Progress,
 } from 'reactstrap';
 import ChartHover from './ChartHover';
+import { formatCurrency } from '../../helper/function';
 
 import { Icon } from 'react-icons-kit';
 import { angleDoubleUp, angleDoubleDown } from 'react-icons-kit/fa';
@@ -351,7 +352,9 @@ class HitungJenis extends Component {
                             <div style={{ width: `${this.persentase(result.current.batasAtas, result.current.hasil)}%`, height: '1px', background: 'white', position: 'relative' }}>
                                 <div style={styles.wadahFlag}>
                                     <div style={styles.flag} onMouseOver={() => this.onHover(result.current.hover)} onMouseLeave={() => this.hoverLeave(result.current.hover)}>
-                                        {result.current.hasil}
+                                        {
+                                          (result.name === 'Trombosit') ? formatCurrency(result.current.hasil) : result.current.hasil
+                                        }
                                         <div style={styles.flagTriangle}></div>
                                     </div>
                                 </div>
