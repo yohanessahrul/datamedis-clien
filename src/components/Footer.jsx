@@ -45,7 +45,7 @@ class Footer extends Component {
                     </div>
                   </Col>
                   <Col md="4">
-                    <div className="footer">
+                    {/* <div className="footer">
                       <h5 style={{ color: 'white' }}>Sosial Media</h5>
                       <ul>
                         <li style={{ listStyle: 'none', display: 'table' }}>
@@ -81,7 +81,7 @@ class Footer extends Component {
                           </div>
                         </li>
                       </ul>
-                    </div>
+                    </div> */}
                   </Col>
                 </Row>
                 <Row>
