@@ -35,9 +35,12 @@ class Footer extends Component {
                         <li style={{ listStyle: 'none', display: 'table' }}>
                           <div className="footerAddress">
                             <p>
-                              Jl Caringin Barat 1 No.29A <br/>
-                              RT 015/010, Terogong, Cilandak Barat<br/>
-                              Jakarta Selatan, 146376<br/>
+                              Klinik Central Park Mall<br/>
+                              Jl. Letjen S. Parman, Tj. Duren Selatan,<br/>
+                              Grogol petamburan, <br/>
+                              Jakarta Barat, Jakarta 11470
+
+
                             </p>
                           </div>
                         </li>
