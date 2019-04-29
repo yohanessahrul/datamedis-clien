@@ -8,7 +8,7 @@ export function loginAction(payload) {
           .then(response => {
               dispatch(setUserProfile(response.data.user))
               dispatch(setToken(response.data.token))
-              localStorage.setItem('token', response.data.token)
+              localStorage.setItem('token', response.data.data.token)
               history.push('/dashboard')
               alertify.success(`Selamat datang ${JSON.stringify(response.data.user.username)}`)
           })
