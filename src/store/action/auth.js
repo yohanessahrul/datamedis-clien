@@ -4,7 +4,7 @@ import alertify from 'alertifyjs';
 
 export function loginAction(payload) {
     return dispatch => {
-        axios.post('http://passport.datamedis.id/auth/login/', payload)
+        axios.post('http://passport.datamedis.id/auth/login', payload)
           .then(response => {
               dispatch(setUserProfile(response.data.user))
               dispatch(setToken(response.data.token))
@@ -12,8 +12,9 @@ export function loginAction(payload) {
               history.push('/dashboard')
               alertify.success(`Selamat datang ${JSON.stringify(response.data.user.username)}`)
           })
-          .catch(err => {
-            alertify.alert('Pemberitahuan', 'Periksa kembali email dan password anda, jika belum ada harap segera segera mendaftar');
+          .catch((err) => {
+            console.log(err)
+            // alertify.alert('Pemberitahuan', 'Periksa kembali email dan password anda, jika belum ada harap segera segera mendaftar');
           })
     }
 }
